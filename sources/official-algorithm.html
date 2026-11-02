@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<title>牌山生成の公開方法: 天鳳ブログ</title>
+<meta name="description" content="牌山生成の公開方法,天鳳 | Blog | Twitter | 情報や記事削除依頼などはサポートまでお願いします。※コメントは非公開です" />
+<meta name="keywords" content="天鳳,麻雀,ゲーム" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta property="fb:app_id" content="734785106572809" />
+<meta property="og:title" content="牌山生成の公開方法" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://blog.tenhou.net/article/30503297.html" />
+<meta property="og:image" content="http://blog.sakura.ne.jp/img/ogp_logo.png" />
+<meta property="og:description" content="牌山の生成方法を完全公開にする予定です。  公開する情報は「配山の生成手法」と「乱数シード」になります。  これによって １．作為的に配牌を選択していない ２．特定の局面で山を操作していない ことが牌譜と対戦ログから検証可能になります。 ※現状でも２．は検証可能です。  以下試験的に作成したサンプルコードです。 (MTやSHAについては省略) MT : http:/…" />
+<meta property="og:site_name" content="天鳳ブログ" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@tsuno_s" />
+
+<link rel="alternate" media="handheld" type="text/html" href="http://blog.tenhou.net/article/30503297.html" />
+<link rel="stylesheet" href="http://blog.tenhou.net/styles-index.css" type="text/css" />
+<link rel="stylesheet" href="http://blog.sakura.ne.jp/css/user-common.css" type="text/css" />
+<link rel="alternate" href="http://blog.tenhou.net/index.rdf" type="application/rss+xml" title="RSS" />
+</head>
+<body><script type="text/javaScript">seesaa_site_id = 'tenhou'; seesaa_floating = false;</script>
+<div id="iphone-link" style="display:none; font-family: sans-serif; padding: 10px 0; width: 100%; color: #FFF; background: #333; min-height: 60px; line-height: 40px; box-sizing: border-box; font-size: 24px; font-weight: 700; text-decoration:none;"><a href="javascript:document.cookie='force_pc=0; max-age=15768000; path=/'; document.cookie='force_sp=1; max-age=15768000; path=/'; document.location='/?from_pc'" style="display: block; width: 100%; text-decoration: none; color: #FFF;">スマートフォン専用ページを表示</a></div>
+<script type="text/javascript"><!--
+if ((0 <= navigator.userAgent.indexOf('iPhone')) || (0 <= navigator.userAgent.indexOf('Android'))) { document.getElementById('iphone-link').style.display = 'block'; }
+//--></script>
+
+
+<div id="container">
+<div id="banner">
+
+
+</div>
+
+<div id="links-left">
+<span class="description"><a href="http://tenhou.net/">天鳳</a> | <a href="http://blog.tenhou.net/">Blog</a> | <a href="https://twitter.com/tsuno_s">Twitter</a> | 情報や記事削除依頼などは<a href="http://tenhou.net/support.html">サポート</a>までお願いします。※コメントは非公開です</span>
+
+<div class="sidetitle">検索ボックス</div>
+<div class="side">
+<form method="get" action="http://blog.tenhou.net/pages/user/search/" class="sASform" name="form3664411" id="form3664411">
+<table class="seesaaArticleSearch">
+<tr>
+<td colspan="5"><input value="" name="keyword" type="text" size="20" class="inputkeyword" />&nbsp;<input value="検索" type="submit" class="input-submit" /></td>
+</tr>
+</table>
+<input type="hidden" name="tid" value="seesaa_hotspot" /><input type="hidden" name="hid" value="167" /><input type="hidden" name="c" value="12" /><input type="hidden" name="search" value="1" /><input type="hidden" name="ic" value="shift-jis" />
+</form>
+<style type="text/css">
+.inputkeyword{width:90px;}
+.seesaaArticleSearch{border-collapse:collapse;overflow:hidden;font-size:12px;text-align:left;width:98%;}
+.seesaaArticleSearch td{padding:0;}
+.sASform{margin:0;padding:0;overflow:hidden;display:block;width:98%;}
+</style>
+</div>
+
+<div id="calendar">
+<table border="0" cellspacing="0" cellpadding="0" summary="Calendar">
+
+<caption class="calendarhead"><span class="calendarday"><a href="http://blog.tenhou.net/archives/202411-1.html">&lt;&lt;</a></span> <a href="http://blog.tenhou.net/archives/202412-1.html">2024年12月</a> <span class="calendarday">&gt;&gt;</span></caption>
+<tr>
+<th abbr="Sunday" align="center" class="calendarday sunday">日</th>
+<th abbr="Monday" align="center" class="calendarday">月</th>
+<th abbr="Tuesday" align="center" class="calendarday">火</th>
+<th abbr="Wednesday" align="center" class="calendarday">水</th>
+<th abbr="Thursday" align="center" class="calendarday">木</th>
+<th abbr="Friday" align="center" class="calendarday">金</th>
+<th abbr="Saturday" align="center" class="calendarday saturday">土</th>
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">1</td>
+<td align="center" class="calendarday calendarday-a"><a href="http://blog.tenhou.net/archives/20241202.html"> 2</a></td>
+<td align="center" class="calendarday">3</td>
+<td align="center" class="calendarday">4</td>
+<td align="center" class="calendarday">5</td>
+<td align="center" class="calendarday">6</td>
+<td align="center" class="calendarday saturday">7</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">8</td>
+<td align="center" class="calendarday">9</td>
+<td align="center" class="calendarday">10</td>
+<td align="center" class="calendarday">11</td>
+<td align="center" class="calendarday">12</td>
+<td align="center" class="calendarday">13</td>
+<td align="center" class="calendarday saturday">14</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">15</td>
+<td align="center" class="calendarday">16</td>
+<td align="center" class="calendarday">17</td>
+<td align="center" class="calendarday">18</td>
+<td align="center" class="calendarday">19</td>
+<td align="center" class="calendarday">20</td>
+<td align="center" class="calendarday saturday">21</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">22</td>
+<td align="center" class="calendarday">23</td>
+<td align="center" class="calendarday">24</td>
+<td align="center" class="calendarday">25</td>
+<td align="center" class="calendarday">26</td>
+<td align="center" class="calendarday">27</td>
+<td align="center" class="calendarday saturday">28</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">29</td>
+<td align="center" class="calendarday">30</td>
+<td align="center" class="calendarday">31</td>
+<td align="center" class="calendarday">&nbsp;</td>
+<td align="center" class="calendarday">&nbsp;</td>
+<td align="center" class="calendarday">&nbsp;</td>
+<td align="center" class="calendarday saturday">&nbsp;</td>
+
+</tr>
+</table>
+</div>
+
+<div class="sidetitle">最近の記事</div>
+<div class="side">
+(12/02)<a href="http://blog.tenhou.net/article/191163338.html">３人打ち天鳳位「おかあさん」さんの全牌譜をアップロードしました</a><br />
+(11/15)<a href="http://blog.tenhou.net/article/191140765.html">４人打ち天鳳位「吃貨小北北」さんの全牌譜をアップロードしました</a><br />
+(07/04)<a href="http://blog.tenhou.net/article/190965758.html">４人打ち天鳳位「COEDO緑」さんの全牌譜をアップロードしました</a><br />
+(07/03)<a href="http://blog.tenhou.net/article/190964333.html">４人打ち２３代目天鳳位誕生！「COEDO緑」さん</a><br />
+(04/07)<a href="http://blog.tenhou.net/article/190846387.html">八翔位戦天鳳予選　結果を掲載しました　本線シードのメール受付（１位～５位を対象）を開始します</a><br />
+(03/06)<a href="http://blog.tenhou.net/article/190804090.html">３人打ち天鳳位「つくねん3」さんの全牌譜をアップロードしました</a><br />
+(03/05)<a href="http://blog.tenhou.net/article/190802320.html">３人打ち２４代目天鳳位誕生！「つくねん3」さん</a><br />
+(02/01)<a href="http://blog.tenhou.net/article/190758636.html">BIG1カップ天鳳鳳凰卓予選　最終結果を掲載しました　本線シードのメール受付（１位～１０位の方を対象）を開始します</a><br />
+(01/21)<a href="http://blog.tenhou.net/article/190744023.html">BIG1カップ一般予選　最終結果を掲載しました　本線シードのメール受付（１位～５位を対象）を開始します</a><br />
+(11/27)<a href="http://blog.tenhou.net/article/190670268.html">日本プロ麻雀連盟2024卓上カレンダー杯</a><br />
+(11/13)<a href="http://blog.tenhou.net/article/190650355.html">日本プロ麻雀連盟2024卓上カレンダー杯</a><br />
+(11/06)<a href="http://blog.tenhou.net/article/190640453.html">上級者だけが知っている麻雀戦術論杯 結果</a><br />
+(10/30)<a href="http://blog.tenhou.net/article/190630718.html">上級者だけが知っている麻雀戦術論杯 結果</a><br />
+(10/29)<a href="http://blog.tenhou.net/article/190629548.html">イラスト見るだけ！Mリーガ佐々木寿人の麻雀入門杯 結果</a><br />
+(10/23)<a href="http://blog.tenhou.net/article/190622356.html">無料チケット発券　横浜国立大学　常盤祭</a><br />
+(10/23)<a href="http://blog.tenhou.net/article/190622334.html">うに丸カップ 結果</a><br />
+(10/22)<a href="http://blog.tenhou.net/article/190620385.html">近代麻雀note杯 結果</a><br />
+(09/24)<a href="http://blog.tenhou.net/article/190573743.html">IORMC日本代表決定戦 結果</a><br />
+(09/19)<a href="http://blog.tenhou.net/article/190564596.html">近代麻雀note杯 結果</a><br />
+(09/18)<a href="http://blog.tenhou.net/article/190563199.html">近代麻雀note杯 結果</a><br />
+</div>
+
+<div class="sidetitle">カテゴリ</div>
+<div class="side">
+<a href="http://blog.tenhou.net/category/703533-1.html">素材</a>(2)<br />
+<a href="http://blog.tenhou.net/category/702845-1.html">日記</a>(2055)<br />
+<a href="http://blog.tenhou.net/category/703678-1.html">イベント</a>(227)<br />
+<a href="http://blog.tenhou.net/category/703734-1.html">ツール</a>(1)<br />
+<a href="http://blog.tenhou.net/category/4551329-1.html">競技</a>(21)<br />
+</div>
+
+<script type="text/javascript" language="javascript" src="http://blog.sakura.ne.jp/js/tag_cloud.js"></script>
+<div class="sidetitle">タグクラウド</div>
+<div class="side-tag">
+<div id="tag_cloud_8141938" style="word-break:break-all;">
+</div>
+<script type="text/javascript" language="javascript"><!--
+tag_cloud("tag_cloud_8141938");
+--></script>
+</div>
+
+<div class="sidetitle">過去ログ</div>
+<div class="side">
+<a href="/archives/202412-1.html">2024年12月</a>(1)<br />
+<a href="/archives/202411-1.html">2024年11月</a>(1)<br />
+<a href="/archives/202407-1.html">2024年07月</a>(2)<br />
+<a href="/archives/202404-1.html">2024年04月</a>(1)<br />
+<a href="/archives/202403-1.html">2024年03月</a>(2)<br />
+<a href="/archives/202402-1.html">2024年02月</a>(1)<br />
+<a href="/archives/202401-1.html">2024年01月</a>(1)<br />
+<a href="/archives/202311-1.html">2023年11月</a>(3)<br />
+<a href="/archives/202310-1.html">2023年10月</a>(5)<br />
+<a href="/archives/202309-1.html">2023年09月</a>(3)<br />
+<a href="/archives/202308-1.html">2023年08月</a>(3)<br />
+<a href="/archives/202307-1.html">2023年07月</a>(1)<br />
+<a href="/archives/202306-1.html">2023年06月</a>(2)<br />
+<a href="/archives/202305-1.html">2023年05月</a>(5)<br />
+<a href="/archives/202304-1.html">2023年04月</a>(3)<br />
+<a href="/archives/202302-1.html">2023年02月</a>(4)<br />
+<a href="/archives/202301-1.html">2023年01月</a>(4)<br />
+<a href="/archives/202212-1.html">2022年12月</a>(8)<br />
+<a href="/archives/202211-1.html">2022年11月</a>(7)<br />
+<a href="/archives/202210-1.html">2022年10月</a>(11)<br />
+<a href="/archives/202209-1.html">2022年09月</a>(3)<br />
+<a href="/archives/202208-1.html">2022年08月</a>(4)<br />
+<a href="/archives/202207-1.html">2022年07月</a>(7)<br />
+<a href="/archives/202206-1.html">2022年06月</a>(1)<br />
+<a href="/archives/202205-1.html">2022年05月</a>(5)<br />
+<a href="/archives/202204-1.html">2022年04月</a>(4)<br />
+<a href="/archives/202203-1.html">2022年03月</a>(1)<br />
+<a href="/archives/202202-1.html">2022年02月</a>(1)<br />
+<a href="/archives/202201-1.html">2022年01月</a>(7)<br />
+<a href="/archives/202112-1.html">2021年12月</a>(11)<br />
+<a href="/archives/202111-1.html">2021年11月</a>(2)<br />
+<a href="/archives/202110-1.html">2021年10月</a>(8)<br />
+<a href="/archives/202109-1.html">2021年09月</a>(13)<br />
+<a href="/archives/202108-1.html">2021年08月</a>(9)<br />
+<a href="/archives/202107-1.html">2021年07月</a>(11)<br />
+<a href="/archives/202106-1.html">2021年06月</a>(10)<br />
+<a href="/archives/202105-1.html">2021年05月</a>(10)<br />
+<a href="/archives/202104-1.html">2021年04月</a>(3)<br />
+<a href="/archives/202103-1.html">2021年03月</a>(6)<br />
+<a href="/archives/202102-1.html">2021年02月</a>(2)<br />
+<a href="/archives/202101-1.html">2021年01月</a>(6)<br />
+<a href="/archives/202012-1.html">2020年12月</a>(10)<br />
+<a href="/archives/202011-1.html">2020年11月</a>(4)<br />
+<a href="/archives/202010-1.html">2020年10月</a>(6)<br />
+<a href="/archives/202009-1.html">2020年09月</a>(11)<br />
+<a href="/archives/202008-1.html">2020年08月</a>(14)<br />
+<a href="/archives/202007-1.html">2020年07月</a>(17)<br />
+<a href="/archives/202006-1.html">2020年06月</a>(12)<br />
+<a href="/archives/202005-1.html">2020年05月</a>(8)<br />
+<a href="/archives/202004-1.html">2020年04月</a>(12)<br />
+<a href="/archives/202003-1.html">2020年03月</a>(9)<br />
+<a href="/archives/202002-1.html">2020年02月</a>(7)<br />
+<a href="/archives/202001-1.html">2020年01月</a>(5)<br />
+<a href="/archives/201912-1.html">2019年12月</a>(7)<br />
+<a href="/archives/201911-1.html">2019年11月</a>(8)<br />
+<a href="/archives/201910-1.html">2019年10月</a>(5)<br />
+<a href="/archives/201909-1.html">2019年09月</a>(6)<br />
+<a href="/archives/201908-1.html">2019年08月</a>(11)<br />
+<a href="/archives/201907-1.html">2019年07月</a>(13)<br />
+<a href="/archives/201906-1.html">2019年06月</a>(19)<br />
+<a href="/archives/201905-1.html">2019年05月</a>(2)<br />
+<a href="/archives/201904-1.html">2019年04月</a>(6)<br />
+<a href="/archives/201903-1.html">2019年03月</a>(6)<br />
+<a href="/archives/201902-1.html">2019年02月</a>(2)<br />
+<a href="/archives/201901-1.html">2019年01月</a>(6)<br />
+<a href="/archives/201812-1.html">2018年12月</a>(7)<br />
+<a href="/archives/201811-1.html">2018年11月</a>(8)<br />
+<a href="/archives/201810-1.html">2018年10月</a>(11)<br />
+<a href="/archives/201809-1.html">2018年09月</a>(6)<br />
+<a href="/archives/201808-1.html">2018年08月</a>(3)<br />
+<a href="/archives/201807-1.html">2018年07月</a>(10)<br />
+<a href="/archives/201806-1.html">2018年06月</a>(8)<br />
+<a href="/archives/201805-1.html">2018年05月</a>(6)<br />
+<a href="/archives/201804-1.html">2018年04月</a>(6)<br />
+<a href="/archives/201803-1.html">2018年03月</a>(2)<br />
+<a href="/archives/201802-1.html">2018年02月</a>(5)<br />
+<a href="/archives/201801-1.html">2018年01月</a>(3)<br />
+<a href="/archives/201712-1.html">2017年12月</a>(8)<br />
+<a href="/archives/201711-1.html">2017年11月</a>(11)<br />
+<a href="/archives/201710-1.html">2017年10月</a>(18)<br />
+<a href="/archives/201709-1.html">2017年09月</a>(6)<br />
+<a href="/archives/201708-1.html">2017年08月</a>(12)<br />
+<a href="/archives/201707-1.html">2017年07月</a>(17)<br />
+<a href="/archives/201706-1.html">2017年06月</a>(7)<br />
+<a href="/archives/201705-1.html">2017年05月</a>(12)<br />
+<a href="/archives/201704-1.html">2017年04月</a>(7)<br />
+<a href="/archives/201703-1.html">2017年03月</a>(11)<br />
+<a href="/archives/201702-1.html">2017年02月</a>(9)<br />
+<a href="/archives/201701-1.html">2017年01月</a>(17)<br />
+<a href="/archives/201612-1.html">2016年12月</a>(18)<br />
+<a href="/archives/201611-1.html">2016年11月</a>(11)<br />
+<a href="/archives/201610-1.html">2016年10月</a>(17)<br />
+<a href="/archives/201609-1.html">2016年09月</a>(5)<br />
+<a href="/archives/201608-1.html">2016年08月</a>(15)<br />
+<a href="/archives/201607-1.html">2016年07月</a>(13)<br />
+<a href="/archives/201606-1.html">2016年06月</a>(28)<br />
+<a href="/archives/201605-1.html">2016年05月</a>(21)<br />
+<a href="/archives/201604-1.html">2016年04月</a>(25)<br />
+<a href="/archives/201603-1.html">2016年03月</a>(27)<br />
+<a href="/archives/201602-1.html">2016年02月</a>(33)<br />
+</div>
+
+<div class="syndicate">
+<a href="/index.rdf">RDF Site Summary / RSS 1.0</a><br />
+<a href="/index20.rdf">RDF Site Summary / RSS 2.0</a><br />
+</div>
+
+<div class="sidetitle">QRコード</div>
+<div class="side">
+<div align="center"><img src="http://blog.tenhou.net/image/seesaa_plugin_qrcode_3385.png" /></div>
+</div>
+
+
+
+</div>
+
+<div id="content">
+
+<!-- Content -->
+<div class="navi">
+<a href="http://blog.tenhou.net/article/30485138.html">&lt;&lt;</a> <a href="http://blog.tenhou.net/article/30485138.html">牌山生成方法</a> | <a href="http://blog.tenhou.net/">TOP</a>
+ | <a href="http://blog.tenhou.net/article/30527070.html">段位戦ロビーのチャット制限</a> <a href="http://blog.tenhou.net/article/30527070.html">&gt;&gt;</a></div>
+
+
+<div class="blog">
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://blog.tenhou.net/article/30503297.html"
+    trackback:ping="http://blog.sakura.ne.jp/tb/30503297"
+    dc:title="牌山生成の公開方法"
+    dc:identifier="http://blog.tenhou.net/article/30503297.html"
+    dc:description="牌山の生成方法を完全公開にする予定です。公開する情報は「配山の生成手法」と「乱数シード」になります。これによって１．作為的に配牌を選択していない２．特定の局面で山を操作していないことが牌譜と対戦ログから検証可能になります。※現状でも２．は検証可能です。以下試験的に作成したサンプルコードです。(MTやSHAについては省略)MT : http://www.google.co.jp/search?q=mt19937ar.cSHA : http://www.google.co.jp/.."
+    dc:creator="つの"
+    dc:subject="日記"
+    dc:date="2009-07-13T07:20:05+09:00"
+/>
+</rdf:RDF>
+-->
+<h2 class="date">2009年07月13日</h2>
+<div class="blogbody">
+<h3 class="title"><a href="http://blog.tenhou.net/article/30503297.html" class="title">牌山生成の公開方法</a></h3>
+<div class="text">牌山の生成方法を完全公開にする予定です。<br>
+<br>
+公開する情報は「配山の生成手法」と「乱数シード」になります。<br>
+<br>
+これによって<br>
+１．作為的に配牌を選択していない<br>
+２．特定の局面で山を操作していない<br>
+ことが牌譜と対戦ログから検証可能になります。<br>
+※現状でも２．は検証可能です。<br>
+<br>
+以下試験的に作成したサンプルコードです。<br>
+(MTやSHAについては省略)<br>
+MT : <a href="http://www.google.co.jp/search?q=mt19937ar.c" target="_blank">http://www.google.co.jp/search?q=mt19937ar.c</a><br>
+SHA : <a href="http://www.google.co.jp/search?q=sha512.c" target="_blank">http://www.google.co.jp/search?q=sha512.c</a><br>
+<br>
+サンプルコードについてのご意見・アドバイスなどなどは support@c-egg.comまでお願いします。<br>
+<br>
+公開開始スケジュールは準備が整い次第告知していきます。<br>
+<br>
+<br>
+■サンプルコード<br>
+<TEXTAREA rows=100 style="width:100%;font-size:xx-small;">
+void SampleYamaShuffle(){
+    static const char *haiDisp[34]={
+        "一","二","三","四","五","六","七","八","九",
+        "①","②","③","④","⑤","⑥","⑦","⑧","⑨",
+        "１","２","３","４","５","６","７","８","９",
+        "東","南","西","北","白","發","中"
+    };
+
+    WORD wShuffleVersionMajor=1;
+    int i;
+    _MTRAND mtRoot;
+    TCHAR szSeedSeqName[32];
+    {
+        DWORD seed[MTRAND_N]; // これは公開されない
+        if (1){
+            // 実際のサーバ動作(予定)
+            HCRYPTPROV hCP; // for Win32Only
+            if (!CryptAcquireContext(&hCP,NULL,NULL,PROV_RSA_FULL,0)) throw 0;
+            if (!CryptGenRandom(hCP,sizeof(seed),(BYTE*)seed)) throw 0;
+            if (!CryptReleaseContext(hCP,0)) throw 0;
+
+            SYSTEMTIME st; // 日付以外を使用する可能性アリ
+            GetLocalTime(&st);
+            wsprintf(szSeedSeqName,_T("%d.%04d.%02d%02d.%02d%02d"),
+                wShuffleVersionMajor,
+                st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute);
+            printf("seedDailyPublic=%s",szSeedSeqName);
+            if (1) for(i=0;i<sizeof(seed)/sizeof(*seed);++i) printf(",%08X",seed[i]);
+            printf("\r\n");
+        }else{
+            // 検証用の入力 // szSeedSeqNameをキーに検索
+            for(i=0;i<sizeof(seed)/sizeof(*seed);++i) seed[0]=/* REPLACE HERE */0;
+        }
+        mtRoot.init_by_array(seed,sizeof(seed)/sizeof(*seed));
+    }
+
+    int nGame=0;
+    for(;nGame<10;++nGame){ // １０回目の対戦まで
+        mtRoot.genrand_int32(); // 席順決定などで３つ消費
+        mtRoot.genrand_int32();
+        mtRoot.genrand_int32(); // サンマは未使用
+        mtRoot.genrand_int32(); // 未使用
+
+        _MTRAND mtLocal;
+        {
+            DWORD seed[MTRAND_N]; // 136!より十分に大きく
+            for(i=0;i<sizeof(seed)/sizeof(*seed);++i) seed[i]=mtRoot.genrand_int32();
+            mtLocal.init_by_array(seed,sizeof(seed)/sizeof(*seed));
+            printf("mt.seed=%s,%d",szSeedSeqName,nGame);
+            if (1) for(i=0;i<sizeof(seed)/sizeof(*seed);++i) printf(",%08X",seed[i]);
+            printf("\r\n");
+        }
+        // ここまででmtRootは合計(MTRAND_N+4)tick
+
+        // ここで牌譜にszSeedSeqName,nGame,seedなどを出力
+
+        int nKyoku=0;
+        for(;nKyoku<10;++nKyoku){ // 配牌が１０回行われた場合
+            DWORD rnd[SHA512_DIGEST_SIZE/sizeof(DWORD)*9]; // 135+2以上を確保
+            {
+                DWORD src[sizeof(rnd)/sizeof(*rnd)*2]; // 1024bit単位で512bitへhash
+                for(i=0;i<sizeof(src)/sizeof(*src);++i) src[i]=mtLocal.genrand_int32();
+                for(i=0;i<sizeof(rnd)/SHA512_DIGEST_SIZE;++i){
+                    SHA2::sha512_ctx ctx;
+                    SHA2::sha512_init(&ctx);
+                    SHA2::sha512_update(&ctx,(BYTE*)src+i*SHA512_DIGEST_SIZE*2,SHA512_DIGEST_SIZE*2); // in=1024bit
+                    SHA2::sha512_final (&ctx,(BYTE*)rnd+i*SHA512_DIGEST_SIZE); // out=512bit
+                }
+            }
+
+            BYTE yama[136]; // サンマは108
+            for(i=0;i<136;++i) yama[i]=i;
+            for(i=0;i<136-1;++i) swap(yama[i],yama[i + (rnd[i]%(136-i))]); // 1/2^32以下の誤差は許容
+
+            printf("nGame=%d nKyoku=%d yama=",nGame,nKyoku);
+            for(i=0;i<136;++i) printf("%s",haiDisp[yama[i]/4]);
+            printf("\r\n");
+
+            int dice0=rnd[135]%6;
+            int dice1=rnd[136]%6;
+            // rnd[137]～rnd[143]は未使用
+        }
+    }
+}
+</TEXTAREA><a name="more"></a>
+ 
+
+<div class="bookmark" data-url="http://blog.tenhou.net/article/30503297.html" data-subject="牌山生成の公開方法"></div>
+
+
+</div>
+<div class="posted">posted by つの at 07:20| <a href="http://blog.tenhou.net/category/702845-1.html">日記</a>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div id="balloonBox"></div>
+<script type="text/javascript" charset="utf-8" src="http://blog.sakura.ne.jp/js/bl-bookmarks.js?20150403"></script>
+<script type="text/javascript" charset="utf-8">
+var bookmark_services = "twitter".split('-').join('').split(",");
+var seesaaBookmarks = new blBookmarks({bookmark_services:bookmark_services, blog_url:"http://blog.sakura.ne.jp"});
+seesaaBookmarks.exe();
+</script>
+<!-- /Content -->
+
+<font color=#AA0000>
+■返信を希望する場合には<a href="http://tenhou.net/support.html">こちら</a>からお問い合わせ下さい。<br>
+<br>
+■雀荘戦ルールについて■<br>
+場千五(1本場1500点)を採用しています<br>
+東西場を採用しています（西も場風）<br>
+</font>
+<br>
+
+
+</div>
+
+
+<div id="footer">
+<div class="powered">
+<img src="http://blog.sakura.ne.jp/img/powerdby.gif" width="120" height="35" border="0" alt="Powered by さくらのブログ" />
+</div>
+
+
+</div>
+
+</div>
+
+<!-- common footer -->
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>

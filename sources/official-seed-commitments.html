@@ -1,0 +1,203 @@
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>オンライン対戦麻雀 天鳳 / 牌山乱数</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<style type="text/css">
+	A:link{color:blue;}A:visited{color:blue;}A:hover{color:red;}
+	div.msg{margin:40;text-align:center;}
+	</style>
+</head><body><center>
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+	<script type="text/javascript" src="/ad1.js"></script>
+	<script type="text/javascript" src="/ad2.js"></script>
+	<script type="text/javascript" src="/navi.js"></script>
+
+
+
+	<br>
+	<table width=728 cellpadding=0 cellspacing=0 class=s >
+	<tr><td valign=top ><img src="/img/f0tl.gif"/></td><td rowspan=2 valign=top ><img src="/img/f0tc.gif"/><br>
+	<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+	<h3><font color="#444444">■</font> 牌山生成用乱数種のハッシュ公開</h3>
+	<!-- --------------------------------------------------------------------------------------------------------------- -->
+	<blockquote>
+	天鳳では、公正な対戦環境を保つことを目的として牌山を生成するアルゴリズムに、
+	意図的な牌山の操作が不可能であることを検証できる独自の方法を採用しています。<br>
+	<br>
+	- <a href="sample_code.txt">牌山生成疑似コード</a><br>
+	- <a href="validation.txt">牌山生成方法の検証用データ</a><br>
+	<br>
+	牌山生成に使用する乱数種は、対戦を開始する前、予約する前、さらには、ログインする前に決定されていて、
+	それが順番に作為なく消費されていることが以下で確認することができます。
+	これにより天鳳のサーバでは、特定の誰かに特別な牌山を選択できないことがわかります。
+	また、公開しているハッシュ値(SHA512)の一方向性から対戦者が牌山を逆算することが事実上不可能であることや、
+	衝突困難性から天鳳の運営者が乱数種を差し替えることが不可能であることが分かります。<br>
+	<br>
+	これらの手法はインターネットの通信を安全に行うために使用されている技術と同じですので、
+	おおまかに「<b>天鳳の牌山はインターネットのセキュリティ技術と同じ方法で信頼性が担保されている</b>」と言えます。
+	<br>
+	<br>
+	- 一覧の更新が停止している場合は乱数生成サーバがメンテナンスを行っています<br>
+	- 乱数生成サーバがメンテナンスを行っている場合は検証できません<br>
+	- いつでも誰でも検証できるようになっていますので毎回検証する必要はありません<br>
+	- SHA512一覧の更新周期が対戦の生成速度に比べて長い場合（稼働率が高い卓）は１つ２つほど先にずれることがあります。<br>
+	- 個室ロビー、大会ロビー、テストプレイの公開予定はありません<br>
+	- SHA512のソースは4(座席並べ替え情報) + 624*8(乱数種) = 4996bytes<br>
+	- SHA512は牌譜と座席から再計算可能です<br>
+	<table><tr><td>
+
+	<table border=1 bordercolor=#CCCCCC cellpadding=4 cellspacing=0 >
+	<tr><td rowspan=2>段位戦</td><td colspan=2>一般</td></tr>
+	<tr>                   <td>東風</td><td>東南</td></tr>
+	<tr><td>喰断ナシ</td>  <td><a href="?00000-0007" target=_blank >表示</a></td>  <td><a href="?00000-000f" target=_blank >表示</a></td>  </tr>
+	<tr><td>喰断アリ</td>  <td><a href="?00000-0003" target=_blank >表示</a></td>  <td><a href="?00000-000b" target=_blank >表示</a></td>  </tr>
+	<tr><td>喰アリ赤</td>  <td><a href="?00000-0001" target=_blank >表示</a></td>  <td><a href="?00000-0009" target=_blank >表示</a></td>  </tr>
+	<tr><td>喰アリ赤速</td><td><a href="?00000-0041" target=_blank >表示</a></td>  <td><a href="?00000-0049" target=_blank >表示</a></td>  </tr>
+	<tr><td>三喰赤</td>    <td><a href="?00000-0011" target=_blank >表示</a></td>  <td><a href="?00000-0019" target=_blank >表示</a></td>  </tr>
+	<tr><td>三喰赤速</td>  <td><a href="?00000-0051" target=_blank >表示</a></td>  <td><a href="?00000-0059" target=_blank >表示</a></td>  </tr>
+	</table>
+
+	</td><td>
+
+	<table border=1 bordercolor=#CCCCCC cellpadding=4 cellspacing=0 >
+	<tr><td colspan=2>上級</td></tr>
+	<tr><td>東風</td><td>東南</td></tr>
+	<tr><td><a href="?00000-0087" target=_blank >表示</a></td>  <td><a href="?00000-008f" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0083" target=_blank >表示</a></td>  <td><a href="?00000-008b" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0081" target=_blank >表示</a></td>  <td><a href="?00000-0089" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00c1" target=_blank >表示</a></td>  <td><a href="?00000-00c9" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0091" target=_blank >表示</a></td>  <td><a href="?00000-0099" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00d1" target=_blank >表示</a></td>  <td><a href="?00000-00d9" target=_blank >表示</a></td>  </tr>
+	</table>
+
+	</td><td>
+
+	<table border=1 bordercolor=#CCCCCC cellpadding=4 cellspacing=0 >
+	<tr><td colspan=2>特上</td></tr>
+	<tr><td>東風</td><td>東南</td></tr>
+	<tr><td><a href="?00000-0027" target=_blank >表示</a></td>  <td><a href="?00000-002f" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0023" target=_blank >表示</a></td>  <td><a href="?00000-002b" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0021" target=_blank >表示</a></td>  <td><a href="?00000-0029" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0061" target=_blank >表示</a></td>  <td><a href="?00000-0069" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0031" target=_blank >表示</a></td>  <td><a href="?00000-0039" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0071" target=_blank >表示</a></td>  <td><a href="?00000-0079" target=_blank >表示</a></td>  </tr>
+	</table>
+
+	</td><td>
+
+	<table border=1 bordercolor=#CCCCCC cellpadding=4 cellspacing=0 >
+	<tr><td colspan=2>鳳凰</td></tr>
+	<tr><td>東風</td><td>東南</td></tr>
+	<tr><td><a href="?00000-00a7" target=_blank >表示</a></td>  <td><a href="?00000-00af" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00a3" target=_blank >表示</a></td>  <td><a href="?00000-00ab" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00a1" target=_blank >表示</a></td>  <td><a href="?00000-00a9" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00e1" target=_blank >表示</a></td>  <td><a href="?00000-00e9" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00b1" target=_blank >表示</a></td>  <td><a href="?00000-00b9" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-00f1" target=_blank >表示</a></td>  <td><a href="?00000-00f9" target=_blank >表示</a></td>  </tr>
+	</table>
+
+	</td></tr><tr><td>
+
+	<table border=1 bordercolor=#CCCCCC cellpadding=4 cellspacing=0 >
+	<tr><td rowspan=2>雀荘戦</td><td colspan=2>若葉</td></tr>
+	<tr>                   <td>東風</td><td>東南</td></tr>
+	<tr><td>喰赤祝０</td>  <td><a href="?00000-0401" target=_blank >表示</a></td>  <td><a href="?00000-0409" target=_blank >表示</a></td>  </tr>
+	<tr><td>喰赤祝２</td>  <td><a href="?00000-0201" target=_blank >表示</a></td>  <td><a href="?00000-0209" target=_blank >表示</a></td>  </tr>
+	<tr><td>喰赤祝５</td>  <td><a href="?00000-0601" target=_blank >表示</a></td>  <td><a href="?00000-0609" target=_blank >表示</a></td>  </tr>
+	<tr><td>三喰赤祝５</td><td><a href="?00000-0611" target=_blank >表示</a></td>  <td><a href="?00000-0619" target=_blank >表示</a></td>  </tr>
+	</table>
+
+	</td><td>
+
+	<table border=1 bordercolor=#CCCCCC cellpadding=4 cellspacing=0 >
+	<tr><td colspan=2>銀</td></tr>
+	<tr><td>東風</td><td>東南</td></tr>
+	<tr><td><a href="?00000-0481" target=_blank >表示</a></td>  <td><a href="?00000-0489" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0281" target=_blank >表示</a></td>  <td><a href="?00000-0289" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0681" target=_blank >表示</a></td>  <td><a href="?00000-0689" target=_blank >表示</a></td>  </tr>
+	<tr><td><a href="?00000-0691" target=_blank >表示</a></td>  <td><a href="?00000-0699" target=_blank >表示</a></td>  </tr>
+	</table>
+
+	</td></tr></table>
+	※更新周期は１分<br>
+	※最大２０戦分を表示テスト中<br>
+	※" USED "はLastUpdatedまでに消費したもの<br>
+	参考)牌山生成手順 <a href="http://blog.tenhou.net/article/30503297.html">http://blog.tenhou.net/article/30503297.html</a><br>
+	参考)牌山生成方法の検証用データ <a href="http://blog.tenhou.net/article/174202532.html">http://blog.tenhou.net/article/174202532.html</a><br>
+	スペシャルサンクス：<a href="https://note.com/totutohoku">とつげき東北</a>
+	</blockquote>
+	<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+	</td><td valign=top ><img src="/img/f0tr.gif"/></td></tr><tr><td valign=bottom ><img src="/img/f0bl.gif"/></td>
+	<td valign=bottom ><img src="/img/f0br.gif"/></td></tr><tr><td valign=bottom colspan=3 ><img src="/img/f0b.gif"/></td></tr></table>
+
+
+
+	<br>
+	<table width=728 cellpadding=0 cellspacing=0 class=s >
+	<tr><td valign=top ><img src="/img/f0tl.gif"/></td><td rowspan=2 valign=top ><img src="/img/f0tc.gif"/><br>
+	<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+	<h3><font color="#444444">■</font> 大まかな検証手順</h3>
+	<!-- --------------------------------------------------------------------------------------------------------------- -->
+	<blockquote>
+	□ これから予約しようとしているルールのSHA512一覧をブラウザで表示したままにする<br>
+	※対戦を開始することが誰にも予測できないタイミングで行うのが理想的です<br>
+	<br>
+	□ 対戦終了後に牌譜からSHA512を計算して上のページから検索する<br>
+	※牌譜ファイルは有料Windows版で、ファイルに牌譜を保存する設定で対戦する必要があります<br>
+	------------------------<br>
+	<form method=get action=verify.cgi >
+	牌譜URL to SHA512<input type=text name=log size=40 value="http://tenhou.net/0/?log=2012062112gm-0001-0000-00000000&tw=2&ts=1"/><input type=submit value=OK /><br>
+	※Flashエコノミー版の牌譜URLは使用できません。<br>
+	※天鳳が提供しているCGI版の検証ツールを使用することは、厳密な検証にはなりません。<br>
+	------------------------<br>
+	<br>
+	□ SHA512が事前に表示した一覧の適切な位置に存在すれば検証できたことになります。<br>
+
+	<br>
+	<br>
+	※一覧の表示から対戦開始までに他の対戦が複数発生する可能性がある状況下で検証する場合には、
+	<a href="http://tenhou.net/sc/raw/">対戦ログ</a>で消費済みのSHA512を知る必要があります。
+	この場合、対戦ログでは同一秒に開始した対戦はログの掲載順序が前後する場合があることを考慮してください。<br>
+
+
+	</form>
+
+	</blockquote>
+	<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+	</td><td valign=top ><img src="/img/f0tr.gif"/></td></tr><tr><td valign=bottom ><img src="/img/f0bl.gif"/></td>
+	<td valign=bottom ><img src="/img/f0br.gif"/></td></tr><tr><td valign=bottom colspan=3 ><img src="/img/f0b.gif"/></td></tr></table>
+
+
+	<br>
+	<table width=728 cellpadding=0 cellspacing=0 class=s >
+	<tr><td valign=top ><img src="/img/f0tl.gif"/></td><td rowspan=2 valign=top ><img src="/img/f0tc.gif"/><br>
+	<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+<b>Q) 対戦が終了するとハッシュが消えてしまっていて見れません…</b><br>
+ハッシュ一覧の取得手順が間違っている可能性があります。
+対戦前にハッシュ一覧を開いて、対戦終了後にそこから検索してください。
+対戦終了後にハッシュを取得した場合、天鳳側が差し替えた可能性を否定できなくなるため意味がありません。
+<br>
+<br>
+
+<b>Q) 毎回確認するのが大変なのですが…</b><br>
+いつでも誰でも検証できる方法が公開されているため、
+すべての将来の対戦も検証可能だと考えることができます。
+ですので、検証は１回のみで問題ありません。
+この情報を疑う場合には、毎回確認する必要があります。
+<br>
+<br>
+
+	<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+	</td><td valign=top ><img src="/img/f0tr.gif"/></td></tr><tr><td valign=bottom ><img src="/img/f0bl.gif"/></td>
+	<td valign=bottom ><img src="/img/f0br.gif"/></td></tr><tr><td valign=bottom colspan=3 ><img src="/img/f0b.gif"/></td></tr></table>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+	<br>
+	<div class=w>&copy; C-EGG</div>
+	<br>
+
+
+</center></body></html>

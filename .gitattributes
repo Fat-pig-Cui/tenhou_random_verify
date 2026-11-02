@@ -1,0 +1,2 @@
+# Cached sources must stay byte-identical to the hashes in sources/manifest.json.
+sources/** -text -diff

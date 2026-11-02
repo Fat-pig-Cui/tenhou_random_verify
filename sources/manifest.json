@@ -1,0 +1,104 @@
+{
+  "note": "Raw downloaded bytes; blog pages use Shift_JIS/CP932. Hashes identify local snapshots, not source authenticity signatures.",
+  "files": [
+    {
+      "path": "sources/official-man.html",
+      "source_url": "https://tenhou.net/man/",
+      "bytes": 101776,
+      "sha256": "3de07f2c338caf520f6c4dc2160270adb7b1fbd25c1666bf61d3f351902f210a",
+      "retrieval_date": "2026-10-26"
+    },
+    {
+      "path": "sources/official-algorithm.html",
+      "source_url": "http://blog.tenhou.net/article/30503297.html",
+      "bytes": 23474,
+      "sha256": "9036a499309c2a11883227b6893f726b8cd2e2bd4895d1177db8724eb22c3796",
+      "retrieval_date": "2026-10-26"
+    },
+    {
+      "path": "sources/official-vectors.html",
+      "source_url": "http://blog.tenhou.net/article/174202532.html",
+      "bytes": 35281,
+      "sha256": "21043b3826629284268b6f6ae8a151ca12cfd37c062c53e0b71b9659aee03456",
+      "retrieval_date": "2026-10-26"
+    },
+    {
+      "path": "sources/official-test-replay.xml",
+      "source_url": "https://tenhou.net/0/log/?2016022509gm-0009-0000-b327da61",
+      "bytes": 4971,
+      "sha256": "123304c516bca82ab7dcc064482833a83e732ac7128c1e942d271f172ad39194",
+      "retrieval_date": "2026-10-26"
+    },
+    {
+      "path": "sources/official-seed-commitments.html",
+      "source_url": "https://tenhou.net/stat/rand/",
+      "bytes": 13966,
+      "sha256": "a98d8706953d1c529d2feef97bafddffaf7757d460d8452d37c78a41fb9db1f1",
+      "retrieval_date": "2026-10-26"
+    },
+    {
+      "path": "sources/mt19937ar.c",
+      "source_url": "https://www.math.sci.hiroshima-u.ac.jp/m-mat/MT/MT2002/CODES/mt19937ar.c",
+      "bytes": 6347,
+      "sha256": "9e446d09e048cadd63d0a39eaa2bdcbd4c8938dfb1848320d33d4c81df59bcf7",
+      "retrieval_date": "2026-10-26"
+    },
+    {
+      "path": "sources/replays/2012062106gm-00c1-0000-8b0f7563.xml",
+      "source_url": "https://tenhou.net/0/log/?2012062106gm-00c1-0000-8b0f7563",
+      "bytes": 5822,
+      "sha256": "cfb7368181296668bfc41304390a038697a0b5700bc7e131a16ad8cb898c7325",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/replays/2026110210gm-00a9-0000-36442307.xml",
+      "source_url": "https://tenhou.net/0/log/?2026110210gm-00a9-0000-36442307",
+      "bytes": 16041,
+      "sha256": "a35e226535d9c0c0a03e92e03c240f3b3de060c888b28813581d023f1cd715f7",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/replays/2026110210gm-00a9-0000-7d730942.xml",
+      "source_url": "https://tenhou.net/0/log/?2026110210gm-00a9-0000-7d730942",
+      "bytes": 17620,
+      "sha256": "c39937a9044d3f8bdbdf4bca17ab8209330832dbb3b0cf2cafe10e2fb511ebd7",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/replays/2026110210gm-00b9-0000-1e1dadd7.xml",
+      "source_url": "https://tenhou.net/0/log/?2026110210gm-00b9-0000-1e1dadd7",
+      "bytes": 11600,
+      "sha256": "17ac452a82f7253bce1007e684e075e35eda32242416908abb2a23f72323fc12",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/replays/2026110216gm-00b9-0000-751bafa9.xml",
+      "source_url": "https://tenhou.net/0/log/?2026110216gm-00b9-0000-751bafa9",
+      "bytes": 10524,
+      "sha256": "fa112316b65453614eaa993800a401dbc5312a8c1b97bdf68b87a7aab06a8cb3",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/replays/2026110216gm-00b9-0000-ad9738a8.xml",
+      "source_url": "https://tenhou.net/0/log/?2026110216gm-00b9-0000-ad9738a8",
+      "bytes": 12720,
+      "sha256": "0aaf5dda398eca6f89ee7873bd058b05ea78cd22f45b4d25c915163c76e72e60",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/replays/2026110216gm-00b9-0000-f12b67a5.xml",
+      "source_url": "https://tenhou.net/0/log/?2026110216gm-00b9-0000-f12b67a5",
+      "bytes": 12246,
+      "sha256": "89c64333d3cdfa8aa027c7a39473e5a67a971a2dd2e1c131eef8f30bd3a6e998",
+      "retrieval_date": "2026-11-02"
+    },
+    {
+      "path": "sources/commitments/00000-00b9-20261102T161633JST.txt",
+      "source_url": "https://tenhou.net/stat/rand/?00000-00b9",
+      "bytes": 3048,
+      "sha256": "93218c4018d9032031cc89185903849a56e4dfbe23bc6a39752c70a04027b418",
+      "retrieval_date": "2026-11-02",
+      "note": "Saved at CurrentTime 2026/11/02 16:16:33 JST, before the three games it is checked against started."
+    }
+  ]
+}

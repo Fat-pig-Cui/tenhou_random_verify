@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<title>牌山生成方法の検証用データ: 天鳳ブログ</title>
+<meta name="description" content="牌山生成方法の検証用データ,天鳳 | Blog | Twitter | 情報や記事削除依頼などはサポートまでお願いします。※コメントは非公開です" />
+<meta name="keywords" content="天鳳,麻雀,ゲーム" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta property="fb:app_id" content="734785106572809" />
+<meta property="og:title" content="牌山生成方法の検証用データ" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://blog.tenhou.net/article/174202532.html" />
+<meta property="og:image" content="http://blog.sakura.ne.jp/img/ogp_logo.png" />
+<meta property="og:description" content="牌譜に埋め込まれている乱数種から牌山を再現するための、中間値の出力結果です。   http://tenhou.net/0/?log=2016022509gm-0009-0000-b327da61  seed mt19937ar-sha512-n288-base64,lFMmGcbVp9UtkFOWd6eDLxicuIFw2eWpoxq/3uzaRv3MHQboS6p JPx3LCxBR2Yionfv217Oe2vvC2LCVNnl+8YxCjunLHFb2unMaNzBvHWQzMz+6f3Che7EkazzaI9InRy0 5MXkqHOLCtVxsjBdIP13evJep6NnEtA79M+qaEHKUOKo+qhJOwBBsHsLVh1X1Qj93Sm6nNcB6Xy3fCTP p4rZ…" />
+<meta property="og:site_name" content="天鳳ブログ" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@tsuno_s" />
+
+<link rel="alternate" media="handheld" type="text/html" href="http://blog.tenhou.net/article/174202532.html" />
+<link rel="stylesheet" href="http://blog.tenhou.net/styles-index.css" type="text/css" />
+<link rel="stylesheet" href="http://blog.sakura.ne.jp/css/user-common.css" type="text/css" />
+<link rel="alternate" href="http://blog.tenhou.net/index.rdf" type="application/rss+xml" title="RSS" />
+</head>
+<body><script type="text/javaScript">seesaa_site_id = 'tenhou'; seesaa_floating = false;</script>
+<div id="iphone-link" style="display:none; font-family: sans-serif; padding: 10px 0; width: 100%; color: #FFF; background: #333; min-height: 60px; line-height: 40px; box-sizing: border-box; font-size: 24px; font-weight: 700; text-decoration:none;"><a href="javascript:document.cookie='force_pc=0; max-age=15768000; path=/'; document.cookie='force_sp=1; max-age=15768000; path=/'; document.location='/?from_pc'" style="display: block; width: 100%; text-decoration: none; color: #FFF;">スマートフォン専用ページを表示</a></div>
+<script type="text/javascript"><!--
+if ((0 <= navigator.userAgent.indexOf('iPhone')) || (0 <= navigator.userAgent.indexOf('Android'))) { document.getElementById('iphone-link').style.display = 'block'; }
+//--></script>
+
+
+<div id="container">
+<div id="banner">
+
+
+</div>
+
+<div id="links-left">
+<span class="description"><a href="http://tenhou.net/">天鳳</a> | <a href="http://blog.tenhou.net/">Blog</a> | <a href="https://twitter.com/tsuno_s">Twitter</a> | 情報や記事削除依頼などは<a href="http://tenhou.net/support.html">サポート</a>までお願いします。※コメントは非公開です</span>
+
+<div class="sidetitle">検索ボックス</div>
+<div class="side">
+<form method="get" action="http://blog.tenhou.net/pages/user/search/" class="sASform" name="form3664411" id="form3664411">
+<table class="seesaaArticleSearch">
+<tr>
+<td colspan="5"><input value="" name="keyword" type="text" size="20" class="inputkeyword" />&nbsp;<input value="検索" type="submit" class="input-submit" /></td>
+</tr>
+</table>
+<input type="hidden" name="tid" value="seesaa_hotspot" /><input type="hidden" name="hid" value="167" /><input type="hidden" name="c" value="12" /><input type="hidden" name="search" value="1" /><input type="hidden" name="ic" value="shift-jis" />
+</form>
+<style type="text/css">
+.inputkeyword{width:90px;}
+.seesaaArticleSearch{border-collapse:collapse;overflow:hidden;font-size:12px;text-align:left;width:98%;}
+.seesaaArticleSearch td{padding:0;}
+.sASform{margin:0;padding:0;overflow:hidden;display:block;width:98%;}
+</style>
+</div>
+
+<div id="calendar">
+<table border="0" cellspacing="0" cellpadding="0" summary="Calendar">
+
+<caption class="calendarhead"><span class="calendarday"><a href="http://blog.tenhou.net/archives/202411-1.html">&lt;&lt;</a></span> <a href="http://blog.tenhou.net/archives/202412-1.html">2024年12月</a> <span class="calendarday">&gt;&gt;</span></caption>
+<tr>
+<th abbr="Sunday" align="center" class="calendarday sunday">日</th>
+<th abbr="Monday" align="center" class="calendarday">月</th>
+<th abbr="Tuesday" align="center" class="calendarday">火</th>
+<th abbr="Wednesday" align="center" class="calendarday">水</th>
+<th abbr="Thursday" align="center" class="calendarday">木</th>
+<th abbr="Friday" align="center" class="calendarday">金</th>
+<th abbr="Saturday" align="center" class="calendarday saturday">土</th>
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">1</td>
+<td align="center" class="calendarday calendarday-a"><a href="http://blog.tenhou.net/archives/20241202.html"> 2</a></td>
+<td align="center" class="calendarday">3</td>
+<td align="center" class="calendarday">4</td>
+<td align="center" class="calendarday">5</td>
+<td align="center" class="calendarday">6</td>
+<td align="center" class="calendarday saturday">7</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">8</td>
+<td align="center" class="calendarday">9</td>
+<td align="center" class="calendarday">10</td>
+<td align="center" class="calendarday">11</td>
+<td align="center" class="calendarday">12</td>
+<td align="center" class="calendarday">13</td>
+<td align="center" class="calendarday saturday">14</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">15</td>
+<td align="center" class="calendarday">16</td>
+<td align="center" class="calendarday">17</td>
+<td align="center" class="calendarday">18</td>
+<td align="center" class="calendarday">19</td>
+<td align="center" class="calendarday">20</td>
+<td align="center" class="calendarday saturday">21</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">22</td>
+<td align="center" class="calendarday">23</td>
+<td align="center" class="calendarday">24</td>
+<td align="center" class="calendarday">25</td>
+<td align="center" class="calendarday">26</td>
+<td align="center" class="calendarday">27</td>
+<td align="center" class="calendarday saturday">28</td>
+
+</tr>
+<tr>
+<td align="center" class="calendarday sunday">29</td>
+<td align="center" class="calendarday">30</td>
+<td align="center" class="calendarday">31</td>
+<td align="center" class="calendarday">&nbsp;</td>
+<td align="center" class="calendarday">&nbsp;</td>
+<td align="center" class="calendarday">&nbsp;</td>
+<td align="center" class="calendarday saturday">&nbsp;</td>
+
+</tr>
+</table>
+</div>
+
+<div class="sidetitle">最近の記事</div>
+<div class="side">
+(12/02)<a href="http://blog.tenhou.net/article/191163338.html">３人打ち天鳳位「おかあさん」さんの全牌譜をアップロードしました</a><br />
+(11/15)<a href="http://blog.tenhou.net/article/191140765.html">４人打ち天鳳位「吃貨小北北」さんの全牌譜をアップロードしました</a><br />
+(07/04)<a href="http://blog.tenhou.net/article/190965758.html">４人打ち天鳳位「COEDO緑」さんの全牌譜をアップロードしました</a><br />
+(07/03)<a href="http://blog.tenhou.net/article/190964333.html">４人打ち２３代目天鳳位誕生！「COEDO緑」さん</a><br />
+(04/07)<a href="http://blog.tenhou.net/article/190846387.html">八翔位戦天鳳予選　結果を掲載しました　本線シードのメール受付（１位～５位を対象）を開始します</a><br />
+(03/06)<a href="http://blog.tenhou.net/article/190804090.html">３人打ち天鳳位「つくねん3」さんの全牌譜をアップロードしました</a><br />
+(03/05)<a href="http://blog.tenhou.net/article/190802320.html">３人打ち２４代目天鳳位誕生！「つくねん3」さん</a><br />
+(02/01)<a href="http://blog.tenhou.net/article/190758636.html">BIG1カップ天鳳鳳凰卓予選　最終結果を掲載しました　本線シードのメール受付（１位～１０位の方を対象）を開始します</a><br />
+(01/21)<a href="http://blog.tenhou.net/article/190744023.html">BIG1カップ一般予選　最終結果を掲載しました　本線シードのメール受付（１位～５位を対象）を開始します</a><br />
+(11/27)<a href="http://blog.tenhou.net/article/190670268.html">日本プロ麻雀連盟2024卓上カレンダー杯</a><br />
+(11/13)<a href="http://blog.tenhou.net/article/190650355.html">日本プロ麻雀連盟2024卓上カレンダー杯</a><br />
+(11/06)<a href="http://blog.tenhou.net/article/190640453.html">上級者だけが知っている麻雀戦術論杯 結果</a><br />
+(10/30)<a href="http://blog.tenhou.net/article/190630718.html">上級者だけが知っている麻雀戦術論杯 結果</a><br />
+(10/29)<a href="http://blog.tenhou.net/article/190629548.html">イラスト見るだけ！Mリーガ佐々木寿人の麻雀入門杯 結果</a><br />
+(10/23)<a href="http://blog.tenhou.net/article/190622356.html">無料チケット発券　横浜国立大学　常盤祭</a><br />
+(10/23)<a href="http://blog.tenhou.net/article/190622334.html">うに丸カップ 結果</a><br />
+(10/22)<a href="http://blog.tenhou.net/article/190620385.html">近代麻雀note杯 結果</a><br />
+(09/24)<a href="http://blog.tenhou.net/article/190573743.html">IORMC日本代表決定戦 結果</a><br />
+(09/19)<a href="http://blog.tenhou.net/article/190564596.html">近代麻雀note杯 結果</a><br />
+(09/18)<a href="http://blog.tenhou.net/article/190563199.html">近代麻雀note杯 結果</a><br />
+</div>
+
+<div class="sidetitle">カテゴリ</div>
+<div class="side">
+<a href="http://blog.tenhou.net/category/703533-1.html">素材</a>(2)<br />
+<a href="http://blog.tenhou.net/category/702845-1.html">日記</a>(2055)<br />
+<a href="http://blog.tenhou.net/category/703678-1.html">イベント</a>(227)<br />
+<a href="http://blog.tenhou.net/category/703734-1.html">ツール</a>(1)<br />
+<a href="http://blog.tenhou.net/category/4551329-1.html">競技</a>(21)<br />
+</div>
+
+<script type="text/javascript" language="javascript" src="http://blog.sakura.ne.jp/js/tag_cloud.js"></script>
+<div class="sidetitle">タグクラウド</div>
+<div class="side-tag">
+<div id="tag_cloud_8141938" style="word-break:break-all;">
+</div>
+<script type="text/javascript" language="javascript"><!--
+tag_cloud("tag_cloud_8141938");
+--></script>
+</div>
+
+<div class="sidetitle">過去ログ</div>
+<div class="side">
+<a href="/archives/202412-1.html">2024年12月</a>(1)<br />
+<a href="/archives/202411-1.html">2024年11月</a>(1)<br />
+<a href="/archives/202407-1.html">2024年07月</a>(2)<br />
+<a href="/archives/202404-1.html">2024年04月</a>(1)<br />
+<a href="/archives/202403-1.html">2024年03月</a>(2)<br />
+<a href="/archives/202402-1.html">2024年02月</a>(1)<br />
+<a href="/archives/202401-1.html">2024年01月</a>(1)<br />
+<a href="/archives/202311-1.html">2023年11月</a>(3)<br />
+<a href="/archives/202310-1.html">2023年10月</a>(5)<br />
+<a href="/archives/202309-1.html">2023年09月</a>(3)<br />
+<a href="/archives/202308-1.html">2023年08月</a>(3)<br />
+<a href="/archives/202307-1.html">2023年07月</a>(1)<br />
+<a href="/archives/202306-1.html">2023年06月</a>(2)<br />
+<a href="/archives/202305-1.html">2023年05月</a>(5)<br />
+<a href="/archives/202304-1.html">2023年04月</a>(3)<br />
+<a href="/archives/202302-1.html">2023年02月</a>(4)<br />
+<a href="/archives/202301-1.html">2023年01月</a>(4)<br />
+<a href="/archives/202212-1.html">2022年12月</a>(8)<br />
+<a href="/archives/202211-1.html">2022年11月</a>(7)<br />
+<a href="/archives/202210-1.html">2022年10月</a>(11)<br />
+<a href="/archives/202209-1.html">2022年09月</a>(3)<br />
+<a href="/archives/202208-1.html">2022年08月</a>(4)<br />
+<a href="/archives/202207-1.html">2022年07月</a>(7)<br />
+<a href="/archives/202206-1.html">2022年06月</a>(1)<br />
+<a href="/archives/202205-1.html">2022年05月</a>(5)<br />
+<a href="/archives/202204-1.html">2022年04月</a>(4)<br />
+<a href="/archives/202203-1.html">2022年03月</a>(1)<br />
+<a href="/archives/202202-1.html">2022年02月</a>(1)<br />
+<a href="/archives/202201-1.html">2022年01月</a>(7)<br />
+<a href="/archives/202112-1.html">2021年12月</a>(11)<br />
+<a href="/archives/202111-1.html">2021年11月</a>(2)<br />
+<a href="/archives/202110-1.html">2021年10月</a>(8)<br />
+<a href="/archives/202109-1.html">2021年09月</a>(13)<br />
+<a href="/archives/202108-1.html">2021年08月</a>(9)<br />
+<a href="/archives/202107-1.html">2021年07月</a>(11)<br />
+<a href="/archives/202106-1.html">2021年06月</a>(10)<br />
+<a href="/archives/202105-1.html">2021年05月</a>(10)<br />
+<a href="/archives/202104-1.html">2021年04月</a>(3)<br />
+<a href="/archives/202103-1.html">2021年03月</a>(6)<br />
+<a href="/archives/202102-1.html">2021年02月</a>(2)<br />
+<a href="/archives/202101-1.html">2021年01月</a>(6)<br />
+<a href="/archives/202012-1.html">2020年12月</a>(10)<br />
+<a href="/archives/202011-1.html">2020年11月</a>(4)<br />
+<a href="/archives/202010-1.html">2020年10月</a>(6)<br />
+<a href="/archives/202009-1.html">2020年09月</a>(11)<br />
+<a href="/archives/202008-1.html">2020年08月</a>(14)<br />
+<a href="/archives/202007-1.html">2020年07月</a>(17)<br />
+<a href="/archives/202006-1.html">2020年06月</a>(12)<br />
+<a href="/archives/202005-1.html">2020年05月</a>(8)<br />
+<a href="/archives/202004-1.html">2020年04月</a>(12)<br />
+<a href="/archives/202003-1.html">2020年03月</a>(9)<br />
+<a href="/archives/202002-1.html">2020年02月</a>(7)<br />
+<a href="/archives/202001-1.html">2020年01月</a>(5)<br />
+<a href="/archives/201912-1.html">2019年12月</a>(7)<br />
+<a href="/archives/201911-1.html">2019年11月</a>(8)<br />
+<a href="/archives/201910-1.html">2019年10月</a>(5)<br />
+<a href="/archives/201909-1.html">2019年09月</a>(6)<br />
+<a href="/archives/201908-1.html">2019年08月</a>(11)<br />
+<a href="/archives/201907-1.html">2019年07月</a>(13)<br />
+<a href="/archives/201906-1.html">2019年06月</a>(19)<br />
+<a href="/archives/201905-1.html">2019年05月</a>(2)<br />
+<a href="/archives/201904-1.html">2019年04月</a>(6)<br />
+<a href="/archives/201903-1.html">2019年03月</a>(6)<br />
+<a href="/archives/201902-1.html">2019年02月</a>(2)<br />
+<a href="/archives/201901-1.html">2019年01月</a>(6)<br />
+<a href="/archives/201812-1.html">2018年12月</a>(7)<br />
+<a href="/archives/201811-1.html">2018年11月</a>(8)<br />
+<a href="/archives/201810-1.html">2018年10月</a>(11)<br />
+<a href="/archives/201809-1.html">2018年09月</a>(6)<br />
+<a href="/archives/201808-1.html">2018年08月</a>(3)<br />
+<a href="/archives/201807-1.html">2018年07月</a>(10)<br />
+<a href="/archives/201806-1.html">2018年06月</a>(8)<br />
+<a href="/archives/201805-1.html">2018年05月</a>(6)<br />
+<a href="/archives/201804-1.html">2018年04月</a>(6)<br />
+<a href="/archives/201803-1.html">2018年03月</a>(2)<br />
+<a href="/archives/201802-1.html">2018年02月</a>(5)<br />
+<a href="/archives/201801-1.html">2018年01月</a>(3)<br />
+<a href="/archives/201712-1.html">2017年12月</a>(8)<br />
+<a href="/archives/201711-1.html">2017年11月</a>(11)<br />
+<a href="/archives/201710-1.html">2017年10月</a>(18)<br />
+<a href="/archives/201709-1.html">2017年09月</a>(6)<br />
+<a href="/archives/201708-1.html">2017年08月</a>(12)<br />
+<a href="/archives/201707-1.html">2017年07月</a>(17)<br />
+<a href="/archives/201706-1.html">2017年06月</a>(7)<br />
+<a href="/archives/201705-1.html">2017年05月</a>(12)<br />
+<a href="/archives/201704-1.html">2017年04月</a>(7)<br />
+<a href="/archives/201703-1.html">2017年03月</a>(11)<br />
+<a href="/archives/201702-1.html">2017年02月</a>(9)<br />
+<a href="/archives/201701-1.html">2017年01月</a>(17)<br />
+<a href="/archives/201612-1.html">2016年12月</a>(18)<br />
+<a href="/archives/201611-1.html">2016年11月</a>(11)<br />
+<a href="/archives/201610-1.html">2016年10月</a>(17)<br />
+<a href="/archives/201609-1.html">2016年09月</a>(5)<br />
+<a href="/archives/201608-1.html">2016年08月</a>(15)<br />
+<a href="/archives/201607-1.html">2016年07月</a>(13)<br />
+<a href="/archives/201606-1.html">2016年06月</a>(28)<br />
+<a href="/archives/201605-1.html">2016年05月</a>(21)<br />
+<a href="/archives/201604-1.html">2016年04月</a>(25)<br />
+<a href="/archives/201603-1.html">2016年03月</a>(27)<br />
+<a href="/archives/201602-1.html">2016年02月</a>(33)<br />
+</div>
+
+<div class="syndicate">
+<a href="/index.rdf">RDF Site Summary / RSS 1.0</a><br />
+<a href="/index20.rdf">RDF Site Summary / RSS 2.0</a><br />
+</div>
+
+<div class="sidetitle">QRコード</div>
+<div class="side">
+<div align="center"><img src="http://blog.tenhou.net/image/seesaa_plugin_qrcode_3385.png" /></div>
+</div>
+
+
+
+</div>
+
+<div id="content">
+
+<!-- Content -->
+<div class="navi">
+<a href="http://blog.tenhou.net/article/174191913.html">&lt;&lt;</a> <a href="http://blog.tenhou.net/article/174191913.html">無料チケット発券 / 冬の麻雀交流戦 東京大学麻雀サークル白</a> | <a href="http://blog.tenhou.net/">TOP</a>
+ | <a href="http://blog.tenhou.net/article/174220255.html">「ドコモ ケータイ払い」でスマホから決済できない不具合を修正しています</a> <a href="http://blog.tenhou.net/article/174220255.html">&gt;&gt;</a></div>
+
+
+<div class="blog">
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://blog.tenhou.net/article/174202532.html"
+    trackback:ping="http://blog.sakura.ne.jp/tb/174202532"
+    dc:title="牌山生成方法の検証用データ"
+    dc:identifier="http://blog.tenhou.net/article/174202532.html"
+    dc:description="牌譜に埋め込まれている乱数種から牌山を再現するための、中間値の出力結果です。http://tenhou.net/0/?log=2016022509gm-0009-0000-b327da61seedmt19937ar-sha512-n288-base64,lFMmGcbVp9UtkFOWd6eDLxicuIFw2eWpoxq/3uzaRv3MHQboS6pJPx3LCxBR2Yionfv217Oe2vvC2LCVNnl+8YxCjunLHFb2unMaNzBvHWQzMz+6f.."
+    dc:creator="つの"
+    dc:subject="日記"
+    dc:date="2016-02-25T10:19:41+09:00"
+/>
+</rdf:RDF>
+-->
+<h2 class="date">2016年02月25日</h2>
+<div class="blogbody">
+<h3 class="title"><a href="http://blog.tenhou.net/article/174202532.html" class="title">牌山生成方法の検証用データ</a></h3>
+<div class="text">牌譜に埋め込まれている乱数種から牌山を再現するための、中間値の出力結果です。<br /><br /><br /><a href="http://tenhou.net/0/?log=2016022509gm-0009-0000-b327da61" target="_blank">http://tenhou.net/0/?log=2016022509gm-0009-0000-b327da61</a><br /><br />seed<br />mt19937ar-sha512-n288-base64,lFMmGcbVp9UtkFOWd6eDLxicuIFw2eWpoxq/3uzaRv3MHQboS6p<br />JPx3LCxBR2Yionfv217Oe2vvC2LCVNnl+8YxCjunLHFb2unMaNzBvHWQzMz+6f3Che7EkazzaI9InRy0<br />5MXkqHOLCtVxsjBdIP13evJep6NnEtA79M+qaEHKUOKo+qhJOwBBsHsLVh1X1Qj93Sm6nNcB6Xy3fCTP<br />p4rZLzRQsnia9d6vE0RSM+Mu2Akg5w/QWDbXxFpsVFlElfLJL+OH0vcjICATfV3RVEgKR10037B1I2zD<br />RF3r9AhXnz+2FIdu9qWjI/YNza3Q/6X429oNBXKLSvZb8ePGJAyXabp2IbrQPX2acLhW5FqdLZAWt504<br />fBO6tb7w41iuDh1NoZUodzgw5hhpAZ2UjznTIBiHSfL1T8L2Ho5tHN4SoZJ62xdfzLPU6Rts9pkIgWOg<br />TfN35FhJ+6e7QYhl2x6OXnYDkbcZQFVKWfm9G6gA/gC4DjPAfBdofnJp4M+vi3YctG5ldV88A89CFRhO<br />PP96w6m2mwUjgUmdNnWUyM7LQnYWOBBdZkTUo4eWaNC1R2zVxDSG4TCROlc/CaoHJBxcSWg+8IQb2u/G<br />aaj8y+9k0G4k5TEeaY3+0r0h9kY6T0p/rEk8v95aElJJU79n3wH24q3jD8oCuTNlC50sAqrnw+/GP5Xf<br />mqkVv5O/YYReSay5kg83j8tN+H+YDyuX3q+tsIRvXX5KGOTgjobknkdJcpumbHXJFle9KEQKi93f6SZj<br />CjJvvaz/FJ4qyAeUmzKDhiM3V2zBX8GWP0Kfm9Ovs8TfCSyt6CH3PLFpnV94WDJ/Hd1MPQ3ASWUs78V3<br />yi8XEvMc8g5l9U1MYIqVIbvU7JNY9PAB04xTbm6Orb+7sFiFLzZ4P/Xy4bdyGNmN4LbduYOjsIn4Sjet<br />f/wxqK4tFnaw9aYlo3r6ksvZzFQl6WI1xqZlB10G9rD297A5vn5mc2mqpDnEGnOExMx8HA7MQqfPM5AY<br />DQmOKy9VYkiiLqHk2nj4lqVeo5vvkvM1hBy+rqcabdF6XNYA2W5v0Mu3OaQuPjN75A7vjGd2t9J5t2er<br />SmHT1WI0RCrUiensUha5obn+sZSiA8FFtSiUAtpGC7+jYRKP7EHhDwPvpUvjoQIg/vgFb5FvT4AzGcr4<br />kxhKlaS2eofgC7Q7u/A329Kxpf54Pi7wVNvHtDkmQBFSLcMN50asBtFlg7CO+N1/nmClmfGSmBkI/SsX<br />8WKbr0vKaFSnKmt8a19hOimJ0/G0Lj+yizqWPQ4fuoRzEwv41utfrySrzR3iLJrhk29dzUgSFaGScyle<br />pk/+RX3nge2TyqHNqOAUol4/bH4KDyDGP4QxrBYXE1qSPG+/6QECYmZh/c3I7qBSLnJ+XWqUzH0wih7b<br />kjJWYv1gNPp6gDOFDWXimDtcnU5A2sF3vW2ui6scAnRV47DgzWk4d94uFTzXNNTDbGX1k1ZPnOlWwVLP<br />0ojeFCrirccHui7MRov+JTd8j8iAXRykCFcD79+mB7zs/1E69rCxbuu4msBjdBFUs+ACN3D4d14EUgDN<br />Dw8lrX23g9orTMtey8/s6XmumvRRUT86wc/E3piUHyUgnELNM1UaXVL/I+zkqISjuSdLqrb+CVZ10s0t<br />twbEtt1CMEVN9bVLUGZzTAgwEsuYchVrdgjJY4puNJc2DNwiPFc63ek9ZsXLmF1ljVXJPXpNJhX8B0HU<br />CNVvkzeqR5uNcUDdzYJPlZIcmNO8NW9InK0b3z3y0rfTK8jnqDDYmeLFtVonjP5rPgK3g4LvWuTmjisQ<br />IceuPjdVSZChx7lfaCopzM83rV3dPOuQOGOvVwLqzvYY5Hj4GUZ7tXtDzKRaHSkniheRU0LOmQ3Na3rU<br />AfRzr4QFC36++FPtHoUKx4ozQB9LWjirQejsjp/Of6FZ+VWionwpT1aP87ks+Sgg0Ubpe8dccJIVLfsb<br />cAB2i0FDWuslcFy2T7NY6+YJdj8Dcp62ZNRBxl5AANWD51wfmkcxWU+JPoC2zOVetAOEQiA4ntfkF3Xu<br />i5a9T/ovuhTzBbI2XN3P2iZStarYMWqj0QyT5tdNdj1UfCI8NN6iIFvUBzsSwX1lhDiC+FSh6c+xDOr8<br />tnVh6PfENwIHhfqC2cCTCLujeYno6xQvWlogN68DtqQhwdiBMe6BHX76o4RYADbiszd3h2+XRpqlc3j7<br />OI5DDUL/GEEq13Q97Eub6VETe5LY4YIF+Y9z4B8rKMEOn15pehYymdovidT7xiZd88VFonXNJmWh9KI4<br />+z5MxEwhT/dsCty+mxpBmOUpCPPMkLuRyd4VjH+eGnUc3BDo4og0D+vEsKbOqAT1da/dgE0XrxTsiliq<br />Nyw/6DHUB5jnKYrlcUNJb0QCpBag8b2m2/yH7dFbiK1utbnI6AoELbEDhPhfUr6cjgM07ju6xarzEMse<br />0zN3c0w58l063I2Rf2lefFW7cU0Jc5Rh10+QKQpmiMYySYybGlt9eMMEdNrU+AhTRacGozxFRi+ij9zR<br />oZ+X+4NIARqQJfdhV+w2365XS9bzG92weHlIJgpS0Mq+/KjLpWKh6HTeXmdGCq07/ZBx/zw9lkmQXnw3<br />ydcpyplk8GblKn1H4jdkSIz5E3RSWzb+8C7BVcpaBcHfDejvbGU5zxT8Vq50oS1c7V9tDzhAoyYZPahg<br />O0MSB1zMyBKfDcfHIPdoSMv+a4QL1mpSWa6NuwumWSIghOKam2bFNedHqlbrBglpfabTKSnYIibBrZCN<br />hDtm/vG0DUtjEXx4ixM1NaYuMU7qiCmTkU3pK3BYqNXTlhK8kwZD72UkR4lzB9th5eqDsW2blED8evnu<br />jJtlTptYvoHqcNFHjnNvtuaNUWqcBXKFIl+I+PSuDaIO/paWJO0kf5VbVFpZdgvnimHZbY8uJ7s4w9W8<br />XoegGqrVIlAT/PjE/2HdPfy75QatjPr8g0Q88wa5BpkWJeOv42NuEWKaVCK55S/kyVUkxcgNop6jWecs<br />jjdmLoGqcaCiA18aKr6MYCtFCxMqW780AKFSUCXKI5obp1DoSsRn24Gd5ww5S74vT99VcBECDMYlvisI<br />Ke07dApsRPOhR7Z4Kt6lSelmjI6vLG0Dri1HjkiAFy8TT6Uoi+JqOBS6tv40dvPknRWyU7MmZugaZ0da<br />vAjEbvvlOiKVjkYyh7q+uh4eZ/qN2kAs/n6RyJaL4v+mx1jlQ1HvOOc+meQoXpedLt0aGMt1QU7Jh4EV<br />68Xz6JLge+h+867RmmvkyWc8qU8GiSwbUXqIBPcKZVZgfP6nPtI7AXq1syVdQkEy2Rus1Csuf0uts<br /><br />init<br />19265394,D5A7D5C6,9653902D,2F83A777,81B89C18,A9E5D970,DEBF1AA3,FD46DAEC,E8061DCC<br />,3F49AA4B,100BCB1D,A888D951,D7F6FB9D,FBDA9EB3,95B0D8C2,F17E7936,E98E428C,F6561CC<br />B,371A73BA,641D6F30,BA3F3333,7BA1707F,3C6B24B1,27D223DA,31392D47,E21C2A79,6C5CB5<br />C2,3F48178C,97BCDE5D,C4D9E8A9,33FD0EB4,72109AEA,3EAA3894,C04E12AA,C21E6C10,F5558<br />7D5,4A773F42,C035A76E,DF2D5F7A,E2E93309,14CD4BB6,BD269E2C,D1C4AB77,CBF88C14,3948<br />02B6,0D16F4C3,9B16F1B5,25511615,F84BB27C,C8BDF4E1,DF0408C8,12557457,4DD79102,481<br />DEC37,17D130DB,1502FD7A,85EDCFE7,A9BDDB21,83FDC868,3F746B73,F6367EE9,A25C4183,FC<br />96BDD2,0389F178,9D6EDA25,0FB46E88,2E9C665F,A716B915,AD05644B,041F4EE7,BC6FADEE,8<br />32BD638,65685387,0CCE1D4A,401A8639,CE236567,2106C874,53BD7CD2,A387BDF0,8437479B,<br />B69E64A8,2CF3D7C5,DB463AF5,2042A63D,7C13E858,1216F9DD,D0EEE97E,C7761962,809D97A3<br />,50C66DE4,7E965215,00EA466F,032E803F,051FF08C,9A9C1FDA,E2EB3378,1B2D87DD,CF575D9<br />9,85D0F300,3F8F1346,6DEAB0DE,E048C1A6,9D4D6752,B2333265,8E859DD0,91591704,E5E128<br />35,512D349A,0D7135DB,244CB821,C2CF954E,07C9816A,0F5A1217,F60621BC,6A9AF1BB,D9FB3<br />23F,39891B34,639A474C,48AFB47F,938E917D,12EB9FD2,96F72F4F,54929484,C0F7D9EF,78AB<br />B87D,AE80F2C3,E742D94C,B9AA004B,8FF1FBF0,AAE677E5,EFE46F45,921761D8,83642E6B,D3F<br />2E3CD,03E61F7E,ABF7E5CA,1B216CEB,86925FD7,A1233839,D29127B9,9BE9A65C,9545721D,02<br />114AEF,FA77F7A2,8CC29849,3F6BEF9B,B28A27C5,CC26E501,CD88E1A0,5730DBD5,D08F65F0,E<br />BF4E6A7,C237F1EC,087A2B4B,5A2CCF7D,16DE5767,77C79F0C,70430F53,3B4B5912,8BF25DF1,<br />C7BCC4C5,7D99833C,22185353,F56E48A5,3DD6243B,E374003C,A39BDB14,ECEE6FAB,CD4B2116<br />,7CFD0F9E,86DC6DB8,2D786336,E8606EB7,127E22EC,FF5FEB8D,8B2B6A0C,3DAC9D45,DE68896<br />9,F6B2A4BE,7A091573,A9718D58,41D74199,BD3DACBD,9F6F0EEC,6ADA9C99,06710EA9,3331E1<br />9C,B303071F,CCF3A910,420306E4,D5CB8A63,8B289258,9E3679A8,57A9253E,E4FBE6A8,0761C<br />DBC,C6A9AB2F,975E749B,5B368035,ED32F49B,8F0B69CE,03F9DE8C,DD19E3BB,6D9EF4AD,98D2<br />EAD9,8D58F574,22B50A11,85147B7A,7F6E68AE,802865AC,4A6D51F0,91B60025,D8E8EF82,10F<br />BA344,FBC04378,E8F852E9,BE3F8840,5BE45B01,C60CE0D3,C624BE72,2D69A512,02F8A19E,FC<br />EE0EED,ACF4F60D,0F9E7F69,3615BC8B,490EEDF1,8B540490,D179C370,59B401AB,BE23EC60,9<br />8E75F37,647C6629,3F4206A6,58FCC54A,F2D2EBA6,CA29159A,D71ADF9A,628A4ED8,0B6DFC74,<br />CEA2EC8F,87438FA5,C41CA1EE,BA35FEC2,2AC9EBD7,8B7847F3,DB64B826,045273D7,9C646885<br />,93A957CA,795F91FF,F2647BE0,386A73A8,8F972805,83821FDB,E18F31C8,85056B0C,8FA4D6C<br />4,40FAEF1B,98999840,3B72737F,9C8B14A8,A55A979F,224C1F33,8CE4B687,58BF9895,A09E3E<br />0D,5943E10C,D70EA678,36905327,5BEF5DB0,C7EAA26B,78159D00,5A3338EC,8BF71D4E,CD354<br />F85,19DB3035,93D5647D,B0553AE7,A2F4B354,B80A8537,EEC171AB,A211B38B,DF4D89FF,1720<br />F223,15022947,E9F7FBC0,3F3BEF81,ACBD4ED4,EEBA5B2C,DD18B026,F82C5504,3EDC8D00,148<br />1D71D,C3433380,6D5F6BC9,D38AF6E0,F3B2D732,6B5E3AFB,5414BDA6,73B0CE4F,25A637F1,27<br />48C907,D54CB310,BF549746,2A39FBC8,49EE2821,BFADEAD2,749D5582,C16D4BB3,50B72DB1,7<br />D53118C,19D4526D,0C02D39C,1CE6B204,82DD5A85,9BE25832,83CD258D,158F0837,4F7AB7CE,<br />E672B159,55635917,935E4F72,017F8549,350275D0,EACDE45B,5CE3E691,60733750,8764E593<br />,0DEF3426,2B27D25B,7CCFF746,CAF4ADB4,0CEA39F2,B1782636,E389566D,80CF9A3F,BBE0E0A<br />D,A339B9D6,7108C48A,D58D8FEB,71286452,0ADA57EE,CD33738A,4F7757EB,180EE43A,BAC0D5<br />EB,3986BDB3,51063E1E,D05EED9E,871629F3,85E2494A,B3D054E4,5A7343A6,7D00B5DE,01E1E<br />B1C,BEAFDF42,A147FB14,8CE2B142,D6D207D0,7AD02A8E,F3A7233B,7E56E89F,9FA86855,A3D5<br />530A,3E4BEEFC,5134084A,D7F15EBA,4B85241C,00DCC67E,50D0A21D,5CC9BAD6,EC932D17,82F<br />93AD6,DCC08F5D,3599ADA7,90977110,F9603500,91E607D7,E25356CC,B32DA04F,00AD5739,0E<br />8810E1,05F9B527,E5A27BDD,8BFE53AF,C13C85EE,37978D6C,9489F673,0CB66AAD,43F4A85A,D<br />3B5F924,1F558F5D,370D8F08,F51688A8,B0C4CE01,0E61595F,2815BE20,43EC737A,9D2DBF3A,<br />F13D7A58,E181C00D,70B6A07E,E82EC224,3A7A62DE,96D60BC5,C0EB0D88,7008A9ED,7B4C2076<br />,BE5F47A0,0016E1A8,CDACB80D,E5DBE1DD,5CA9A6D1,23CE3EDE,BF50C390,B54A10C6,127B0FD<br />D,4454FAE6,38B6E4DE,637E8160,CA07F8DC,A74330CA,855E9AD7,8B76A68C,F13E75E2,F17C97<br />89,739D6851,7D689949,CF3E8E28,08133193,02DBFD53,C6A62FB7,4A396690,24F33C42,7772E<br />42E,E71F6385,37479D86,A2383A04,F1FA030D,AAB3292C,6B5D3D01,451360F7,223BC5EB,CB8D<br />2A96,750CFA0F,CA39E601,505CB962,00D15BD2,3CA805A9,FFB6696F,5674FB21,AD5B2BE2,023<br />A726E,406C0B81,D4173EE1,8023A7AF,EE8E3BCD,C4BC6AB1,CCB4C732,0ED3DCDD,B74E977C,DA<br />5F6423,6E159F57,5C4253DC,D37518E5,99420AE4,928C31A2,96C62663,C1305EDF,3EB5361D,6<br />9D11402,11CFA8C1,A3E88B51,676834F7,D2E0FEE5,09A44600,FB55D87D,95EBB70D,C6BCF5D2,<br />1E1E6CF7,94820952,BFAF32B4,58E9322A,371D7AA8,82D19997,64FF4EAB,0FCF7F1C,17649265<br />,75F20D9F,59A672CA,4AB9193C,8DF8519F,3E2312D9,9614DD44,0BBCBFCD,967255B0,C377708<br />1,19DB3B7A,3FC5734E,289DAB15,573B574B,10CE43DB,4F86C928,D00E186A,33D781C4,C3A704<br />32,3DC8F171,FF3212DA,F502E19A,6B96949A,E9C26EA3,21884896,D9A6A638,D1794DB1,C1BA9<br />5EA,695F5A82,764ACAB4,6BB08908,0E612364,6DBCBFD9,C4D85203,C4221E5F,8B694DCD,A2BA<br />538C,53E4640A,16DC4A7A,E574352A,C124AF84,49D9FB90,C15CE211,7A79D8F6,665BECA0,1E3<br />F10E5,26A37BBE,D6A653D9,9C7AA02F,9CE35134,A3B9EDDB,01A75A54,9748A15C,2B3D3EE2,BF<br />836883,3B89A5A5,56E51F49,5D9616D5,98E2F982,CB635B76,30CEEE89,A1176FF5,B5AA06E8,F<br />F049448,D83F313E,2E7F4F77,63AB41F9,D120BF3E,AEC13C0F,8945A641,D8F8EB78,A65884DB,<br />79AE0895,5532F94B,03723149,D6A8A768,8D23CB79,6AA08BD9,8028689C,AF8AC6D7,D10A18A3<br />,96CAC442,2800CDEF,72099454,E986E688,B1123AD4,67E0F619,520EC379,F7D38BEF,40045CD<br />5,6F893183,7B0AC28A,9B02DD4E,51E83C11,B70A9EED,597A52A9,CBAB23A3,8BEB401B,2092E3<br />51,D3C4CB05,F8224AE9,2E058E9A,1D8DBFAD,4527F9BC,C9EC946C,9906BA99,02AFD6D1,F9BE1<br />B31,63A5884E,EEA18C91,8787AEAF,76A3FE99,9F3F0B90,A22572A4,B1E9BFF8,D45039D6,CF39<br />CE7B,170A79A6,B74BE7A5,DD328646,61B25350,F17A45E0,B824FA7C,BC1FFA1E,9A66B4EB,CF5<br />932F9,A2C1532A,5ED4064B,C23D01A2,1F985599,B4CFA93F,AD5EC08E,5057C96C,46B64C90,CB<br />0A35EB,6CEBD29F,<br /><br />src<br />B96FC1AE,2C3F7889,496EDE46,C11E458F,D3BB9BB5,14C13A9E,AB282F05,2F80C2E9,1984EAFE<br />,9EEDCB59,BB4E1284,539042FF,BE58B0BD,AF154A94,16B8A028,EA13E964,DEBAC0BA,F3B14B7<br />0,8A12177C,C21B0E88,9942866F,1C404C3F,919D583A,0B3BF488,9FF9B492,174A366E,4BD265<br />D0,598D19A0,A9902C63,9BBDBBB0,091BD4AB,4631917E,1EAD0188,3367E566,1471D569,AF64B<br />F4C,6E89E90E,902CE207,8E51C1EA,8F679051,884581D0,52A754A6,1571C6EE,B3335D8D,C136<br />D1A1,082AC1F1,12508A5B,5CBB5B44,562C954C,AEBFEE02,4C930B0D,1906A162,16B74159,D8D<br />CFD94,0231C0B0,45056F0C,12493A9A,DB522031,17950FB5,C94FD042,0655B9FE,BC287179,8A<br />53F273,C7056F2B,A5C16AD2,7574566B,4333C57B,A77CB6A0,049FB4B5,D47464DE,1CD65BC8,E<br />0A0DD8A,5D92CF80,E38790BA,26520991,30FDD2BA,A2441FE4,3865FED2,3AA1E74B,B407A73E,<br />8FBEE54D,6D911321,888F38BE,1391869D,B6778C15,9B1600E3,3F94B792,58EB29CD,D446B132<br />,A8AE6B78,2BDBE4CB,4C7BB0DC,7D8C2205,44497340,E462D77E,90B91E88,29A820B9,C538B84<br />F,6BA3BAE8,3B866527,EAC627CD,14DF6013,9EADEBC3,C0C11835,89C41829,0B0AA641,C7DFD5<br />24,94DDB036,8FF0EF11,610BF3BD,A92A1026,FCFA74CE,FF4A23E4,F93E779A,DFF850FE,4E3DD<br />905,75D7E694,F23F3079,679DC460,5E7BF447,5F2D4E0C,D0F08B30,F2E5B885,B56C8C6B,979F<br />C639,481145CB,2A8DFCCE,376181A0,8BF961E0,7933AA19,65034430,19835DDA,4C911256,A04<br />D9EFF,6FBA4032,E89EAEC9,D7B28235,F8EDA25D,14E32D0A,302D8C19,327C34AC,6D5AB5D9,5B<br />4C616D,A03E2197,B0793ED0,FE665EDF,CE9886F4,0B4DCCD3,AA156773,BC3A80D2,E549C04B,A<br />66E40EE,94E6763E,F40590C6,B8BDAE64,A9B49D25,CFB0F488,14D9CE76,7F3BCD2B,68E9E564,<br />8E315327,26AB8F7A,393049DC,B634690A,2E6E1267,BA0B03A5,BAD0201F,34A1CB16,0AA9F3C7<br />,67CA6A99,ED2DE305,C690DF56,D2338880,86B06E39,B2D17070,8B5F6305,8EAF2B18,E484504<br />1,EA0C242D,6FF63B56,C5CEECA3,9445AF20,845D4376,0824DFC0,5EEFAF85,AC9B9FDC,FC3CB2<br />5E,1DF64A1A,F4BC8D18,C2EF2664,21A1AAA0,28FFA8E4,03474B99,C259CCD9,98E7B637,D4FAE<br />EF1,1EBCE3A3,3FE43A33,B156F380,0C70F8E7,DC361BC4,566259A0,B31F34EF,338E51F9,D050<br />DA37,CA22E495,57F30D22,41748580,0A03FDBD,58E605E0,AECE082E,05CF86D0,F73D6189,25D<br />CBB9F,125923A4,22CC8EF5,E41AD250,56210C1F,CD6192BC,24B40058,C3EF4065,F5898B9A,06<br />85F2E8,F922FE27,FE8219FA,3625E18A,27047D3B,4F90E967,4994554E,EBC935E7,12EDADBD,3<br />FC8B714,35B9035F,D45AFC0B,0EF34646,8F875B7F,BCCC0790,16C361CC,A35EBA17,53381A9E,<br />8EE07691,F84C65D0,4EDC949E,4B898728,980EA5A0,365DEF97,AB8B1DD4,1F73B061,C6519D16<br />,F658AD88,7620EBDE,4247479B,4C51A251,E7A51DC0,539CC9FC,EDAF77EF,A0799787,E4613BD<br />5,4C4BDA45,049760FB,BFCB9B09,12135C88,4E29A367,807D7826,7A5E546A,74F81EC7,030189<br />B6,3B25B8BB,FE815530,F4BBDB62,F29F3E37,264F68EF,5A21F762,E18AEAD6,57951839,3AFED<br />91C,9ED85472,94ABF6AF,F9A597CB,870225C2,41AE1396,68B1B226,9ACF2C5C,E9115D8C,93C8<br />FF7D,75DAF9AC,FBBEE952,183A729A,<br /><br />rnd<br />85B04666,E7C12A95,5C37A95A,4C0C2589,1EDCE91C,EAACD226,AFEE8224,65BED45E,DF9477F4<br />,C7DE1D9B,AAFBB33D,2C034024,1F11F2AB,8C0ED3B0,D58E3525,13CFDC48,F5DA31F9,AEEB508<br />0,7CB15E98,A93D435E,E153EF5E,FACEBB94,29BF2F69,3BBC99C6,B7365C0F,7A22E1BA,F92DD5<br />C6,FFD38D1B,C27A6D4D,7A1C3E44,D3686331,4C3D3B83,6BB1D40B,E3599511,8C92D102,9FEF3<br />F33,35371687,C52755A2,9222477E,035C8F61,F613BE29,F687464C,85C2EA17,54366FFA,D43F<br />C290,7E9FFA0C,44DC3FA7,7160E508,490C4F41,3368683C,08C8AE5F,E3B7B41E,B07FAE12,764<br />C763D,A3A45AFA,6ECEDBBE,B926F39A,A425BECA,6B72BA28,CC32CF80,BF045E94,D48C1B86,6F<br />B5820E,28913B17,1E7AF490,51778EBF,DB5DE0C4,AE4DB068,3B078903,2FECD303,3790AE44,4<br />4F8E2A1,A3CAC861,8D7B5D06,99B697B6,DD1607E7,B5BF0F03,3803C3F8,60151FA5,419E1919,<br />227219ED,4EB5E79D,7D29363C,1C4350A9,1D06492B,9A039D70,5E4C0E53,F146E05E,D853AA9D<br />,6D66D6FE,43EDC1D5,83C2651D,13DE8300,72BCE099,6E88E98F,86C85B98,18DF3B5A,85ACFEC<br />D,B3D9D94E,FE2D2F55,9B9F4E63,3C8F6F98,0E1B7CDD,6B1C8A1C,432DF51A,A2673B57,6222E3<br />6C,4BC0B63E,6375D3C9,9E5D62B6,E05E7144,27FA58A3,6BC6DBA2,2B9F4AC6,C9162D26,F45A2<br />8B6,24D51774,2C512D69,6EDE2253,7639B738,424A7F8C,EAB9655F,AF3F48F5,34D42A03,0E32<br />7C56,DF0800FD,58F4A178,92E05448,E62A0420,5AB03BC0,B4EFAF0D,DA6C1E01,B992A65C,177<br />2265C,F4B0F68D,FC112E17,5E517AC7,29AF79FA,875A40C6,61AC18D9,5AC9D2FD,900189FC,62<br />D65DB1,9A6F1083,<br /><br />yama<br />22,91,36,115,56,19,60,16,124,35,59,43,107,9,5,11,57,73,18,41,42,20,25,30,103,100<br />,126,130,77,109,17,15,67,46,72,65,131,118,102,61,113,123,89,122,92,3,129,81,97,2<br />8,24,76,37,69,31,26,66,78,51,54,112,64,94,38,88,128,13,133,87,21,27,114,105,50,1<br />0,29,1,4,48,70,32,14,86,33,23,84,93,12,117,47,75,96,44,111,95,62,74,39,116,63,53<br />,6,2,58,79,71,108,68,121,8,49,55,34,135,82,125,90,98,83,45,132,106,0,101,134,40,<br />7,85,110,99,52,80,120,104,119,127,<br /><a name="more"></a>
+ 
+
+<div class="bookmark" data-url="http://blog.tenhou.net/article/174202532.html" data-subject="牌山生成方法の検証用データ"></div>
+
+
+</div>
+<div class="posted">posted by つの at 10:19| <a href="http://blog.tenhou.net/article/174202532.html#comment">Comment(0)</a>
+| <a href="http://blog.tenhou.net/category/702845-1.html">日記</a>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="comments">
+
+<a name="comment"></a>
+
+<div class="comments-head">この記事へのコメント</div>
+
+<div class="comments-head">コメントを書く</div>
+<form action="http://blog.tenhou.net/pages/user/comments2/regist/input" method="post" name="comment-form">
+<div class="comments-body">
+お名前: [必須入力]<br />
+<input type="text" name="article_child__writer" size="50" value="" /><br />
+メールアドレス: <br />
+<input type="text" name="article_child__email" size="50" value="" /><br />
+ホームページアドレス: <br />
+<input type="text" name="article_child__homepage" size="50" value="" /><br />
+コメント: [必須入力]<br />
+<textarea name="article_child__body" rows="10" cols="45"></textarea><br />
+<input type="hidden" name="article_child__article_id" value="174202532" />
+<input type="hidden" name="article_id" value="174202532" />
+認証コード: [必須入力]<br />
+<img src="http://blog.tenhou.net/image/seesaa_captcha_comment.gif?1793002905" /><br />
+<input type="text" name="captcha_comment" size="50" value="" /><br />
+※画像の中の文字を半角で入力してください。<br />
+※ブログオーナーが承認したコメントのみ表示されます。<br />
+<input name="need_confirm" type="submit" class="input-submit"  value="確認する" /><input name="posted" type="submit" class="input-submit"  value="書き込む" />
+</div>
+</form>
+</div>
+
+
+
+<div id="balloonBox"></div>
+<script type="text/javascript" charset="utf-8" src="http://blog.sakura.ne.jp/js/bl-bookmarks.js?20150403"></script>
+<script type="text/javascript" charset="utf-8">
+var bookmark_services = "twitter".split('-').join('').split(",");
+var seesaaBookmarks = new blBookmarks({bookmark_services:bookmark_services, blog_url:"http://blog.sakura.ne.jp"});
+seesaaBookmarks.exe();
+</script>
+<!-- /Content -->
+
+<font color=#AA0000>
+■返信を希望する場合には<a href="http://tenhou.net/support.html">こちら</a>からお問い合わせ下さい。<br>
+<br>
+■雀荘戦ルールについて■<br>
+場千五(1本場1500点)を採用しています<br>
+東西場を採用しています（西も場風）<br>
+</font>
+<br>
+
+
+</div>
+
+
+<div id="footer">
+<div class="powered">
+<img src="http://blog.sakura.ne.jp/img/powerdby.gif" width="120" height="35" border="0" alt="Powered by さくらのブログ" />
+</div>
+
+
+</div>
+
+</div>
+
+<!-- common footer -->
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>

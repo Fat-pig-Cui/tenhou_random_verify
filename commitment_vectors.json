@@ -1,0 +1,69 @@
+{
+  "retrieval_date": "2026-11-02",
+  "note": "vectors: sha512 is the response of Tenhou's verify.cgi, used only to pin down the serialization. pre_game_list: a hash list saved before the listed games started; matched locally without verify.cgi.",
+  "vectors": [
+    {
+      "log": "2016022509gm-0009-0000-b327da61",
+      "replay": "sources/official-test-replay.xml",
+      "verify_url": "https://tenhou.net/stat/rand/verify.cgi?log=http%3A%2F%2Ftenhou.net%2F0%2F%3Flog%3D2016022509gm-0009-0000-b327da61%26tw%3D0",
+      "sha512": "f380fa814c6155fc8bef43f4e83ec7be5395301e9cd62c37c7a2b260a7261f41b13b2c76d223cdd1552d287b3a8077c185692a07322fe8488548dfc59c617922",
+      "seat_order": "3120"
+    },
+    {
+      "log": "2012062106gm-00c1-0000-8b0f7563",
+      "replay": "sources/replays/2012062106gm-00c1-0000-8b0f7563.xml",
+      "verify_url": "https://tenhou.net/stat/rand/verify.cgi?log=http%3A%2F%2Ftenhou.net%2F0%2F%3Flog%3D2012062106gm-00c1-0000-8b0f7563%26tw%3D0",
+      "sha512": "82130ebc97a612423b86d5f8f7641f68f85d8e46db033f888bf9c5858cea05bfc282ad238ff01b57f83c393cdf8638bc05edef5e4f848702ce01b81d2ce83670",
+      "seat_order": "2031"
+    },
+    {
+      "log": "2026110210gm-00a9-0000-7d730942",
+      "replay": "sources/replays/2026110210gm-00a9-0000-7d730942.xml",
+      "verify_url": "https://tenhou.net/stat/rand/verify.cgi?log=http%3A%2F%2Ftenhou.net%2F0%2F%3Flog%3D2026110210gm-00a9-0000-7d730942%26tw%3D0",
+      "sha512": "24f466af0f34faa6655c31a3542f7a15947e249e8d71498c7e8a84d39eb50305b7adaf65eb783aae28feebc8de62bec477499c8702cf14e6e6cab578838bcf43",
+      "seat_order": "2031"
+    },
+    {
+      "log": "2026110210gm-00a9-0000-36442307",
+      "replay": "sources/replays/2026110210gm-00a9-0000-36442307.xml",
+      "verify_url": "https://tenhou.net/stat/rand/verify.cgi?log=http%3A%2F%2Ftenhou.net%2F0%2F%3Flog%3D2026110210gm-00a9-0000-36442307%26tw%3D0",
+      "sha512": "2802a90637d85f4202ed9f25937efc4306e137c73d88e8870eca0d8026cdd4744b2e8277d322a2c9c9399b283cc77a711471cb9c90fb46f14af14f513117d25c",
+      "seat_order": "2130"
+    },
+    {
+      "log": "2026110210gm-00b9-0000-1e1dadd7",
+      "replay": "sources/replays/2026110210gm-00b9-0000-1e1dadd7.xml",
+      "verify_url": "https://tenhou.net/stat/rand/verify.cgi?log=http%3A%2F%2Ftenhou.net%2F0%2F%3Flog%3D2026110210gm-00b9-0000-1e1dadd7%26tw%3D0",
+      "sha512": "78f669021d10f69a92ad16065cd46d3fdc4b67f51ece77069ca136e233c9e4aba677a170cd65dfd3e17f7f8ced9d3e58b34ea2ac9bae34529ba6929d896be96c",
+      "seat_order": "0123"
+    }
+  ],
+  "pre_game_list": {
+    "path": "sources/commitments/00000-00b9-20261102T161633JST.txt",
+    "rule": "00000-00b9 (三鳳南喰赤)",
+    "saved_at": "2026-11-02 16:16:33 JST",
+    "games": [
+      {
+        "log": "2026110216gm-00b9-0000-751bafa9",
+        "replay": "sources/replays/2026110216gm-00b9-0000-751bafa9.xml",
+        "start": "16:17 JST",
+        "entry": 2,
+        "seat_order": "2103"
+      },
+      {
+        "log": "2026110216gm-00b9-0000-ad9738a8",
+        "replay": "sources/replays/2026110216gm-00b9-0000-ad9738a8.xml",
+        "start": "16:21 JST",
+        "entry": 3,
+        "seat_order": "2013"
+      },
+      {
+        "log": "2026110216gm-00b9-0000-f12b67a5",
+        "replay": "sources/replays/2026110216gm-00b9-0000-f12b67a5.xml",
+        "start": "16:22 JST",
+        "entry": 4,
+        "seat_order": "2103"
+      }
+    ]
+  }
+}
